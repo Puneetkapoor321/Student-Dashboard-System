@@ -2,6 +2,8 @@
 
 A futuristic, high-performance student learning dashboard designed like a modern SaaS operating system. Built with Next.js 16 (App Router), Supabase, Tailwind CSS, Framer Motion v12, and TypeScript.
 
+🔗 **Live Demo**: [https://skillup-student-learning-system-pied.vercel.app/login](https://skillup-student-learning-system-pied.vercel.app/login)
+
 ---
 
 ## 🌟 Introduction & Product Vision

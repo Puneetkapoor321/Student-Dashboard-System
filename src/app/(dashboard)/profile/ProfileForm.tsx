@@ -1,9 +1,8 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { motion } from 'framer-motion'
 import { User } from '@/src/types'
-import { User as UserIcon, Mail, Lock, Monitor, CheckCircle2, Loader2 } from 'lucide-react'
+import { User as UserIcon, Lock, Loader2 } from 'lucide-react'
 import { updateProfile } from '@/src/lib/auth/actions'
 
 export function ProfileForm({ user }: { user: User }) {

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react"
-import { Trophy, CheckCircle, Award, Star, Flame, Zap, GraduationCap } from "lucide-react"
+import { Award, Flame, Zap, GraduationCap } from "lucide-react"
 import { getSession } from "@/src/lib/auth/session"
 import { createClient } from "@/src/lib/supabase/server"
 import { redirect } from "next/navigation"
@@ -42,7 +42,6 @@ async function AchievementsContent() {
   const hasReactProgress = courses.some(c => c.course_id === 'react' && c.progress >= 50)
   const hasCompletedCourse = courses.some(c => c.progress === 100)
   const hasAnyProgress = courses.some(c => c.progress >= 25)
-  const totalMinutes = activity.reduce((acc, curr) => acc + (curr.minutes_learned || 0), 0)
 
   const badges = [
     {

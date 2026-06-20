@@ -49,7 +49,7 @@ function HeroTileComponent({ name, streak, activeCoursesCount, delay }: HeroTile
             Welcome back, {name} 👋
           </h2>
           <p className="text-sm md:text-[15px] font-medium text-zinc-400 max-w-[600px]">
-            Keep the momentum going — you're in the top 5% this week
+            Keep the momentum going — you&apos;re in the top 5% this week
           </p>
         </motion.div>
         

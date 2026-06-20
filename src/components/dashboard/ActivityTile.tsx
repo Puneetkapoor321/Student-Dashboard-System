@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { motion, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ActivityData } from '@/src/types'
 import { AnimatedCard } from '../shared/AnimatedCard'
 import { Flame } from 'lucide-react'

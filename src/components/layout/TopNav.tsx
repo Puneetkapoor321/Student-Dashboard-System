@@ -2,7 +2,7 @@
 
 import { Search, Bell, Flame } from 'lucide-react'
 import { User } from '@/src/types'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface TopNavProps {
   user: User | null
@@ -43,7 +43,7 @@ export function TopNav({ user, streak }: TopNavProps) {
         {/* User Profile */}
         <div className="flex items-center gap-2 px-3.5 py-2 rounded-full border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] cursor-pointer transition-colors">
           {user?.avatar_url ? (
-            <img src={user.avatar_url} alt={user.username} className="w-5 h-5 rounded-full object-cover" />
+            <Image src={user.avatar_url} alt={user.username} width={20} height={20} className="w-5 h-5 rounded-full object-cover" unoptimized />
           ) : (
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400">
               <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>

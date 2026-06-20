@@ -5,7 +5,7 @@ import { jwtVerify } from 'jose'
 const secretKey = process.env.SESSION_SECRET || 'super-secret-key-for-local-dev-only'
 const encodedKey = new TextEncoder().encode(secretKey)
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const session = request.cookies.get('session')?.value
 
   // Protected routes
@@ -31,7 +31,7 @@ export async function middleware(request: NextRequest) {
       if (isPublicRoute) {
         return NextResponse.redirect(new URL('/dashboard', request.url))
       }
-    } catch (error) {
+    } catch {
       // Invalid session, delete cookie
       const response = NextResponse.redirect(new URL('/login', request.url))
       response.cookies.delete('session')
@@ -43,6 +43,8 @@ export async function middleware(request: NextRequest) {
   // For now, this is enough to protect routes.
   return NextResponse.next()
 }
+
+export default proxy;
 
 export const config = {
   matcher: [

@@ -51,7 +51,15 @@ function StarLayer({
   const [boxShadow, setBoxShadow] = React.useState<string>("");
 
   React.useEffect(() => {
-    setBoxShadow(generateStars(count, starColors));
+    let active = true;
+    requestAnimationFrame(() => {
+      if (active) {
+        setBoxShadow(generateStars(count, starColors));
+      }
+    });
+    return () => {
+      active = false;
+    };
   }, [count, starColors]);
 
   return (
